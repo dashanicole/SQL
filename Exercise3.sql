@@ -1,0 +1,4 @@
+--Exercise 3--
+SELECT DISTINCT edulvl 
+FROM EMPLOYEE
+ORDER BY edulvl DESC;

@@ -82,7 +82,7 @@ ORDER BY projno DESC;
 SELECT *
 FROM DEPARTMENT
 WHERE
-    CASE WHEN LENGTH(deptno) = 1 THEN deptno ELSE SUBSTRING(deptno, CEILING(LENGTH(deptno) / 2), 1) END = '1'
+    CASE WHEN LEN(deptno) = 1 THEN deptno ELSE SUBSTRING(deptno, CEILING(LEN(deptno) / 2), 1) END = '1'
 ORDER BY deptno;
 
 --Exercise 15--
