@@ -19,25 +19,24 @@ CREATE TABLE ACQ_RESVSN (
     pymnt_type CHAR(4) CHECK (pymnt_type IN ('CASH', 'EPAY'))
 );
 
-/*
+-- testing
 INSERT INTO ACQ_RESVSN (sid, sname, date_paid, amount, pymnt_type)
 VALUES (101, 'Dit Cat', GETDATE(), 500.00, 'CASH');
-
-UPDATE ACQ_RESVSN
-SET date_paid = '2024-11-15', amount = 550.00, pymnt_type = 'EPAY'
-WHERE ticket_no = 1; 
 
 UPDATE CCS_ACQ_2024
 SET course = 'BSCS', year = 3
 WHERE sid = 101; 
 
+UPDATE ACQ_RESVSN
+SET date_paid = '2024-11-15', amount = 550.00, pymnt_type = 'EPAY'
+WHERE ticket_no = 1; 
+
 DELETE FROM ACQ_RESVSN WHERE ticket_no = 1; 
 
+/*
 SELECT * FROM CCS_ACQ_2024;
 SELECT * FROM ACQ_RESVSN;
-
 DROP TABLE CCS_ACQ_2024;
 DROP TABLE ACQ_RESVSN;
 DROP TRIGGER trgins_acq_resvsn;
 */
-

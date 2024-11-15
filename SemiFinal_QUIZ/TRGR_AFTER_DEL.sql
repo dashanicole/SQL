@@ -7,17 +7,15 @@ AFTER DELETE
 AS
     DECLARE @ticket_no SMALLINT, @sid SMALLINT, @sname VARCHAR(30);
 
-    SELECT 
-        @ticket_no = d.ticket_no, 
-        @sid = d.sid, 
-        @sname = d.sname
-    FROM DELETED d;
+	BEGIN
+		SELECT 
+			@ticket_no = d.ticket_no, 
+			@sid = d.sid, 
+			@sname = d.sname
+		FROM DELETED d;
+	END;
 
-	/*
-    PRINT 'Reservation Canceled:';
-    PRINT 'Ticket No: ' + CAST(@ticket_no AS VARCHAR);
-    PRINT 'Student Name: ' + @sname;
-	*/
-
-    DELETE FROM CCS_ACQ_2024 WHERE sid = @sid;
+	BEGIN
+		DELETE FROM CCS_ACQ_2024 WHERE sid = @sid;
+	END;
 GO
